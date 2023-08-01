@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const MovieList = (props) => {
   //const movies = [];
-  const movies = useSelector((state) => state.movies);
+  const movies = useSelector((state) => state.movieReducer.movies);
 
   return (
     <div className="flex-1">

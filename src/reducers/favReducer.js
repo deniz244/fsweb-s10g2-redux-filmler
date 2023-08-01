@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
     case TOGGLE_FAVORITES:
       return {
         ...state,
-        displayFavorites: true,
+        displayFavorites: !state.displayFavorites,
       };
 
     case ADD_FAVORITE:
@@ -26,7 +26,9 @@ const reducer = (state = initialState, action) => {
     case REMOVE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.filter((item) => action.payload !== item.id),
+        favorites: state.favorites.filter(
+          (movie) => movie.id !== action.payload
+        ),
       };
     default:
       return state;
